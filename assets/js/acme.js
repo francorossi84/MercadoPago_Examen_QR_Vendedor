@@ -357,20 +357,22 @@ $(document).ready(function() {
 		var externalStoreID=$('#externalStoreIDPOS').val();
 		var externalPOSID=$('#externalPOSID').val();
 
-		// REVISA AQUÍ:
+		// REVISA AQUÍ OK:
 
-		var category = 1;   // Agrega aquí el número de categoría o MCC necesario para 
+		var category = 621102;   // Agrega aquí el número de categoría o MCC necesario para
 							// Identificar al POS de restaurante
 
 
-		// REVISA AQUÍ:
+		// REVISA AQUÍ OK:
 		// Comprueba que el posJSON sea el adecuado para crear un POS integrado correctamente.
 
-		var posJSON ={"name":posName,
-					"external_store_id":externalStoreID,
-					"fixed_amount":false,
-					"category_id":category,
-					"external_id":externalPOSID};
+		var posJSON ={
+			"name":posName,
+			"fixed_amount":true,
+			"category":category,
+			"external_store_id": externalStoreID,
+			"external_id":externalPOSID
+		};
 
 
 
