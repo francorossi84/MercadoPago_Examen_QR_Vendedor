@@ -322,10 +322,22 @@ $(document).ready(function() {
 		var externalStoreID = $('#externalStoreID').val();
 
 
-		// REVISA AQUÍ:
+		// REVISA AQUÍ OK:
 		// Modifica el storeJSON con la estructura necesaria para crear una Store correctamente.
 
-		var storeJSON = {}
+		var storeJSON = {
+			external_id: externalStoreID,
+			name: storeName,
+			location: {
+				city_name: city,
+				latitude: latitude,
+				longitude: longitude,
+				reference:addressReference,
+				state_name: state,
+				street_name: streetName,
+				street_number: streetNumber
+			}
+		}
 
 		console.log(storeJSON);
 		$.post("api/store/create/",{json:JSON.stringify(storeJSON)},function(results){
